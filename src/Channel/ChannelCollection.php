@@ -7,7 +7,7 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Channel;
+namespace DevLancer\Payment\API\Cashbill\Channel;
 
 /**
  * Przechowuje kolekcje kanałów płatności

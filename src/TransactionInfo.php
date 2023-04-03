@@ -7,12 +7,12 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill;
+namespace DevLancer\Payment\API\Cashbill;
 
 use DevLancer\Payment\Exception\InvalidCurrencyException;
 use DevLancer\Payment\Helper\Currency;
 use DevLancer\Payment\Helper\TestModeTrait;
-use DevLancer\Payment\Payment\Cashbill\Helper\DefaultDataContainerTrait;
+use DevLancer\Payment\API\Cashbill\Helper\DefaultDataContainerTrait;
 
 /**
  * Przechowuje wszystkie informacje o transakcji

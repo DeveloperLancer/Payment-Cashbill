@@ -7,17 +7,17 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill;
+namespace DevLancer\Payment\API\Cashbill;
 
 use DevLancer\Payment\Exception\RequestException;
 use DevLancer\Payment\Helper\Currency;
 use DevLancer\Payment\Helper\TestModeTrait;
-use DevLancer\Payment\Payment\Cashbill\Channel\Channel;
-use DevLancer\Payment\Payment\Cashbill\Channel\ChannelCollection;
-use DevLancer\Payment\Payment\Cashbill\Container\ChannelsContainer;
-use DevLancer\Payment\Payment\Cashbill\Container\PaymentContainer;
-use DevLancer\Payment\Payment\Cashbill\Container\TransactionInfoContainer;
-use DevLancer\Payment\Payment\Cashbill\Container\ValidationContainer;
+use DevLancer\Payment\API\Cashbill\Channel\Channel;
+use DevLancer\Payment\API\Cashbill\Channel\ChannelCollection;
+use DevLancer\Payment\API\Cashbill\Container\ChannelsContainer;
+use DevLancer\Payment\API\Cashbill\Container\PaymentContainer;
+use DevLancer\Payment\API\Cashbill\Container\TransactionInfoContainer;
+use DevLancer\Payment\API\Cashbill\Container\NotificationContainer;
 use DevLancer\Payment\TransferInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
@@ -170,18 +170,18 @@ class Cashbill
      * Metoda weryfikuje odpowiedź od Cashbill, zapewnia implementacje dla Notification service.
      * Cashbill wymaga, żeby po zweryfikowaniu płatności udzielić odpowiedzi: 200 'OK'
      *
-     * @param ValidationContainer $container
+     * @param NotificationContainer $container
      * @param bool $printResponse Jeżeli true, zostanie wyświetlona odpowiedź 200 'OK'
-     * @return PaymentValidation|null
+     * @return PaymentNotification|null
      */
-    public function paymentValidation(ValidationContainer $container, bool $printResponse = false): null|PaymentValidation
+    public function paymentNotification(NotificationContainer $container, bool $printResponse = false): null|PaymentNotification
     {
         if ($printResponse) {
             http_response_code(200);
             echo 'OK';
         }
 
-        $validation = new PaymentValidation($container);
+        $validation = new PaymentNotification($container);
         if (!$validation->checkSign())
             return null;
 

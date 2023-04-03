@@ -7,7 +7,7 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Helper;
+namespace DevLancer\Payment\API\Cashbill\Helper;
 
 /**
  * Dostarcza metoda która pozwala zweryfikować czy żądanie się powiodło

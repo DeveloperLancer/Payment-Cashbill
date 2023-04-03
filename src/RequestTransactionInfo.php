@@ -7,12 +7,12 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill;
+namespace DevLancer\Payment\API\Cashbill;
 
 use DevLancer\Payment\Exception\InvalidArgumentException;
-use DevLancer\Payment\Payment\Cashbill\Container\TransactionInfoContainer;
-use DevLancer\Payment\Payment\Cashbill\Helper\IsErrorTrait;
-use DevLancer\Payment\Payment\Cashbill\Helper\RequestUrlTrait;
+use DevLancer\Payment\API\Cashbill\Container\TransactionInfoContainer;
+use DevLancer\Payment\API\Cashbill\Helper\IsErrorTrait;
+use DevLancer\Payment\API\Cashbill\Helper\RequestUrlTrait;
 use DevLancer\Payment\Transfer;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;

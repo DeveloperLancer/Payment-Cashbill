@@ -9,7 +9,7 @@
 require_once '/vendor/autoload.php';
 
 //Kontener który, przechowuje wszystkie możliwe dane przekazywane podczas płatności
-$container = new \DevLancer\Payment\Payment\Cashbill\Container\PaymentContainer(
+$container = new \DevLancer\Payment\API\Cashbill\Container\PaymentContainer(
     "secretPhrase", //tajny klucz
     "shopId", //Identyfikator sklepu
     "title", //Tytuł płatności
@@ -19,7 +19,7 @@ $container = new \DevLancer\Payment\Payment\Cashbill\Container\PaymentContainer(
 );
 //Oprócz danych w konstruktorze można jeszcze podać dane opcjonalne używając settera
 
-$cashbill = new \DevLancer\Payment\Payment\Cashbill\Cashbill();
+$cashbill = new \DevLancer\Payment\API\Cashbill\Cashbill();
 $payment = $cashbill->generatePayment($container); //Generowana jest nowa płatność
 if (is_null($payment)) {
     echo "Generowanie płatności się nie powiodło";
@@ -37,8 +37,8 @@ $successURL = "https://your-page.pl/success";
 $failURL = "https://your-page.pl/fail";
 $isUpdated = $payment->updateReturnUrls($successURL, $failURL); //Aktualizacja URL
 if ($isUpdated === false) {
-    //Aktualizacja adresów się nie powiodła
-    //Informacje na temat niepowodzenia można uzyskać odwołując się do metody:
+    //Aktualizacja adresów się nie powiodła.
+    //Informacje na temat niepowodzenia można uzyskać, odwołując się do metody:
     //$response = $payment->getResponseUpdateReturnUrls();
     //echo (string) $response->getBody(); 
 }
@@ -50,7 +50,7 @@ header(sprintf("Location: %s", $payment->getRedirectUrl()));
 ### Weryfikowanie statusu płatności
 
 CashBill komunikuje się z systemem sklepu przy pomocy usługi powiadamiania.
-Adres URL, na którym została ona uruchomiona po stronie sklepu musi zostać określony podczas zgłoszenia
+Adres URL, na którym została ona uruchomiona po stronie sklepu, musi zostać określony podczas zgłoszenia
 uruchomienia usługi i jest niezmienny dla każdej transakcji (w przeciwieństwie do adresów URL
 powrotu przeglądarki klienta).
 
@@ -75,17 +75,17 @@ Poniższy kod należy zaimplementować na stronie, która została określona dl
 require_once '/vendor/autoload.php';
 
 
-$container = new \DevLancer\Payment\Payment\Cashbill\Container\ValidationContainer(
+$container = new \DevLancer\Payment\API\Cashbill\Container\ValidationContainer(
     "secretPhrase", //Tajny klucz.
     $_GET['cmd'], //Nazwa komunikatu.
     $_GET['args'], //Atrybuty komunikatu.
     $_GET['sign'], //Suma kontrolna w MD5
 );
 
-$cashbill = new \DevLancer\Payment\Payment\Cashbill\Cashbill();
+$cashbill = new \DevLancer\Payment\API\Cashbill\Cashbill();
 $printResponse = true; //Jeżeli true, automatycznie zostanie udzielona odpowiedź dla cashbill tzn. "OK"
 
-$service = $cashbill->paymentValidation($container, $printResponse);
+$service = $cashbill->paymentNotification($container, $printResponse);
 
 if (is_null($service)) {
     //Oznacza to, że sumy kontrolne nie są równe i nie można uwiarygodnić żądania
@@ -104,13 +104,13 @@ wymagane do tego jest identyfikator płatności.
 ```php
 <?php
 require_once '/vendor/autoload.php';
-$container = new \DevLancer\Payment\Payment\Cashbill\Container\TransactionInfoContainer(
+$container = new \DevLancer\Payment\API\Cashbill\Container\TransactionInfoContainer(
     "secretPhrase", //Tajny klucz.
     "shopId", //Identyfikator sklepu,
     "orderId", //Identyfikator płatności
 );
 
-$cashbill = new \DevLancer\Payment\Payment\Cashbill\Cashbill();
+$cashbill = new \DevLancer\Payment\API\Cashbill\Cashbill();
 $transactionInfo = $cashbill->getTransactionInfo($container);
 if (is_null($transactionInfo)) {
     echo "Nie udało pobrać się informacji o transakcji";
@@ -126,6 +126,6 @@ if ($transactionInfo->isSuccessful()) {
     //$transactionInfo->getAdditionalData(); dodatkowe informacje zamieszczone w transakcji podczas jej generowania
 } else {
     //Oznacza to, że transakcja ma inny status od TransactionInfo::SUCCESS_STATUS
-    //Lista statusów z opisem: ValidationContainer::STATUS
+    //Lista statusów z opisem: NotificationContainer::STATUS
 }
  ```

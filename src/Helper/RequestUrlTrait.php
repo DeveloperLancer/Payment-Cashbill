@@ -7,7 +7,7 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Helper;
+namespace DevLancer\Payment\API\Cashbill\Helper;
 
 /**
  * Dostarcza metodę określającą adres żądania w zależności od trybu

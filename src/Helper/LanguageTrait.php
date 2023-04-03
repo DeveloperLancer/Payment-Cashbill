@@ -7,7 +7,7 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Helper;
+namespace DevLancer\Payment\API\Cashbill\Helper;
 
 /**
  * Odpowiada za zunifikowanie sposobu przechowywania i zapisywania kodu języka dla kanału płatności.

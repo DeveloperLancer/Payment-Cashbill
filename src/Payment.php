@@ -7,10 +7,10 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill;
+namespace DevLancer\Payment\API\Cashbill;
 
 use DevLancer\Payment\Helper\TestModeTrait;
-use DevLancer\Payment\Payment\Cashbill\Container\UpdateReturnUrlsContainer;
+use DevLancer\Payment\API\Cashbill\Container\UpdateReturnUrlsContainer;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 

@@ -7,25 +7,25 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill;
+namespace DevLancer\Payment\API\Cashbill;
 
-use DevLancer\Payment\Payment\Cashbill\Container\ValidationContainer;
+use DevLancer\Payment\API\Cashbill\Container\NotificationContainer;
 
 /**
  * Klasa odpowiada za weryfikacje aktualnego stanu płatności,
  * obiekt powinien zostać wywołany podczas żądania od cashbill
  */
-class PaymentValidation
+class PaymentNotification
 {
     /**
-     * @var ValidationContainer
+     * @var NotificationContainer
      */
-    private ValidationContainer $container;
+    private NotificationContainer $container;
 
     /**
-     * @param ValidationContainer $container
+     * @param NotificationContainer $container
      */
-    public function __construct(ValidationContainer $container)
+    public function __construct(NotificationContainer $container)
     {
         $this->container = $container;
     }
@@ -51,9 +51,9 @@ class PaymentValidation
     }
 
     /**
-     * @return ValidationContainer
+     * @return NotificationContainer
      */
-    public function getContainer(): ValidationContainer
+    public function getContainer(): NotificationContainer
     {
         return $this->container;
     }

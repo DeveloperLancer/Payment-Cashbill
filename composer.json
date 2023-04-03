@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "DevLancer\\PolishPayment\\Payment\\Cashbill\\": "src/"
+      "DevLancer\\Payment\\API\\Cashbill\\": "src/"
     }
   }
 }

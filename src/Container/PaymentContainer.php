@@ -7,12 +7,12 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Container;
+namespace DevLancer\Payment\API\Cashbill\Container;
 
 use DevLancer\Payment\Helper\Currency;
-use DevLancer\Payment\Payment\Cashbill\Channel\Channel;
-use DevLancer\Payment\Payment\Cashbill\Helper\DefaultDataContainerTrait;
-use DevLancer\Payment\Payment\Cashbill\Helper\LanguageTrait;
+use DevLancer\Payment\API\Cashbill\Channel\Channel;
+use DevLancer\Payment\API\Cashbill\Helper\DefaultDataContainerTrait;
+use DevLancer\Payment\API\Cashbill\Helper\LanguageTrait;
 
 /**
  * Kontener przechowujący dane wymagane dla żądania:

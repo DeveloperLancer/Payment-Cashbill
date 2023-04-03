@@ -7,10 +7,10 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Helper;
+namespace DevLancer\Payment\API\Cashbill\Helper;
 
 use DevLancer\Payment\Helper\Currency;
-use DevLancer\Payment\Payment\Cashbill\Channel\Channel;
+use DevLancer\Payment\API\Cashbill\Channel\Channel;
 
 /**
  * Zawiera często używane pola do kontenerów dla żądań lub odpowiedzi

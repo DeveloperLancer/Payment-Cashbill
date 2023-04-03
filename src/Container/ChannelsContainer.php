@@ -7,9 +7,9 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Container;
+namespace DevLancer\Payment\API\Cashbill\Container;
 
-use DevLancer\Payment\Payment\Cashbill\Helper\LanguageTrait;
+use DevLancer\Payment\API\Cashbill\Helper\LanguageTrait;
 
 /**
  * Kontener przechowujący dane wymagane przy zapytaniu:

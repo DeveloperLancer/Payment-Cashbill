@@ -7,12 +7,12 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Container;
+namespace DevLancer\Payment\API\Cashbill\Container;
 
 /**
  * Zawiera dane przesłane w żądaniu od Cashbill do twojej aplikacji
  */
-class ValidationContainer
+class NotificationContainer
 {
     /**
      * Lista nazwa komunikatu (składające się tylko z małych znaków) oraz wiadomość opisująca komunikat

@@ -7,7 +7,7 @@
  */
 
 
-namespace DevLancer\Payment\Payment\Cashbill\Container;
+namespace DevLancer\Payment\API\Cashbill\Container;
 
 /**
  * Kontener przechowujący dane wymagane przy zapytaniu:
