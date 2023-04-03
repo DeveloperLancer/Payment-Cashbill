@@ -1,0 +1,21 @@
+{
+  "name": "dev-lancer/payment-cashbill",
+  "type": "library",
+  "license": "MIT",
+  "description": "Cashbill API implementation",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Jakub Gniecki",
+      "email": "kubuspl@onet.eu"
+    }
+  ],
+  "require": {
+    "dev-lancer/payment": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DevLancer\\PolishPayment\\Payment\\Cashbill\\": "src/"
+    }
+  }
+}
