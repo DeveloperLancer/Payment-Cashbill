@@ -1,5 +1,11 @@
 # Payment Cashbill
 
+## Instalacja
+Aby zainstalować bibliotekę należy użyć komendy:
+```bash
+composer require dev-lancer/payment-cashbill
+```
+
 ## Przykładowa implementacja
 
 ### Tworzenie nowej płatności
