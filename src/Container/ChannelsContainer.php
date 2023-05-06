@@ -28,7 +28,7 @@ class ChannelsContainer
 
     /**
      * @param string $shopId Identyfikator sklepu
-     * @param string|null $language Kod języka kanału płatności PL lub EN, nie wymagane
+     * @param string|null $language Kod języka kanału płatności PL lub EN, niewymagane
      */
     public function __construct(string $shopId, ?string $language = null)
     {

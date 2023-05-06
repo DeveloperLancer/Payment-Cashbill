@@ -37,16 +37,16 @@ trait DefaultDataContainerTrait
     /**
      * Opis transakcji
      *
-     * @var string
+     * @var null|string
      */
-    protected string $description;
+    protected null|string $description;
 
     /**
      * Dodatkowe dane przypisane do transakcji – nie są prezentowane klientow
      *
-     * @var string
+     * @var null|string
      */
-    protected string $additionalData;
+    protected null|string $additionalData;
 
     /**
      * Kwota transakcji w postaci wartości dziesiętnej

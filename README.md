@@ -21,7 +21,8 @@ $container = new \DevLancer\Payment\API\Cashbill\Container\PaymentContainer(
     "title", //Tytuł płatności
     2.53, //amountValue - kwota płatności
     "PLN", //amountCurrencyCode - waluta płatności,
-    "additionalData", //dodatkowe informacje przekazywane w płatności, można je potem pobrać
+    null, //Opis transakcji (niewymagane)
+    "additionalData", //dodatkowe informacje przekazywane w płatności, można je potem pobrać (niewymagane)
 );
 //Oprócz danych w konstruktorze można jeszcze podać dane opcjonalne używając settera
 
@@ -105,7 +106,7 @@ $orderId = $service->getOrderId();
 ### Pobieranie informacji o transakcji
 
 Można pobrać informacje o wygenerowanej wcześniej transakcji,
-wymagane do tego jest identyfikator płatności.
+wymagany do tego jest identyfikator płatności.
 
 ```php
 <?php

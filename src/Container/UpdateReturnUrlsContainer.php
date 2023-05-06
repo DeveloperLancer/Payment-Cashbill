@@ -55,9 +55,9 @@ class UpdateReturnUrlsContainer
      * @param string $shopId Identyfikator sklepu.
      * @param string $orderId Identyfikator płatności.
      * @param string $returnUrl Adres powrotu przeglądarki klienta po pozytywnym zakończeniu płatności.
-     * @param string $negativeReturnUrl Adres powrotu przeglądarki klienta po negatywnym zakończeniu transakcji.
+     * @param string|null $negativeReturnUrl Adres powrotu przeglądarki klienta po negatywnym zakończeniu transakcji.
      */
-    public function __construct(string $secretPhrase, string $shopId, string $orderId, string $returnUrl, string $negativeReturnUrl)
+    public function __construct(string $secretPhrase, string $shopId, string $orderId, string $returnUrl, ?string $negativeReturnUrl = null)
     {
         $this->secretPhrase = $secretPhrase;
         $this->shopId = $shopId;

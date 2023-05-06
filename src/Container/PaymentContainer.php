@@ -14,6 +14,7 @@ use DevLancer\Payment\Helper\Currency;
 use DevLancer\Payment\API\Cashbill\Channel\Channel;
 use DevLancer\Payment\API\Cashbill\Helper\DefaultDataContainerTrait;
 use DevLancer\Payment\API\Cashbill\Helper\LanguageTrait;
+use JetBrains\PhpStorm\Deprecated;
 
 /**
  * Kontener przechowujący dane wymagane dla żądania:
@@ -65,11 +66,12 @@ class PaymentContainer
      * @param string $title
      * @param float $amountValue
      * @param Currency|string $amountCurrencyCode
-     * @param string $description
-     * @param string $additionalData
+     * @param string|null $description
+     * @param string|null $additionalData
      * @throws InvalidCurrencyException
+     * @Deprecated @param string $description
      */
-    public function __construct(string $secretPhrase, string $shopId, string $title, float $amountValue, Currency|string $amountCurrencyCode, string $description, string $additionalData)
+    public function __construct(string $secretPhrase, string $shopId, string $title, float $amountValue, Currency|string $amountCurrencyCode, string $description = null, string $additionalData = null)
     {
         $this->secretPhrase = $secretPhrase;
         $this->shopId = $shopId;
