@@ -75,7 +75,7 @@ Poniższy kod należy zaimplementować na stronie, która została określona dl
 require_once '/vendor/autoload.php';
 
 
-$container = new \DevLancer\Payment\API\Cashbill\Container\ValidationContainer(
+$container = new \DevLancer\Payment\API\Cashbill\Container\NotificationContainer(
     "secretPhrase", //Tajny klucz.
     $_GET['cmd'], //Nazwa komunikatu.
     $_GET['args'], //Atrybuty komunikatu.

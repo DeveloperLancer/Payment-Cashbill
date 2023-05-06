@@ -9,6 +9,7 @@
 
 namespace DevLancer\Payment\API\Cashbill\Container;
 
+use DevLancer\Payment\Exception\InvalidCurrencyException;
 use DevLancer\Payment\Helper\Currency;
 use DevLancer\Payment\API\Cashbill\Channel\Channel;
 use DevLancer\Payment\API\Cashbill\Helper\DefaultDataContainerTrait;
@@ -66,6 +67,7 @@ class PaymentContainer
      * @param Currency|string $amountCurrencyCode
      * @param string $description
      * @param string $additionalData
+     * @throws InvalidCurrencyException
      */
     public function __construct(string $secretPhrase, string $shopId, string $title, float $amountValue, Currency|string $amountCurrencyCode, string $description, string $additionalData)
     {
