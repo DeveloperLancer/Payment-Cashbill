@@ -75,12 +75,11 @@ class Cashbill
         }
 
         $request->sendRequest($container);
+        $this->response = $request->getResponse();
         if ($request->isError())
             return null;
 
-        $response = $request->getResponse();
-        $this->response = $response;
-        $data = \json_decode((string) $response->getBody(), true);
+        $data = \json_decode((string) $this->response->getBody(), true);
         $payment = new Payment($container->getSecretPhrase(), $container->getShopId(), $data['id'], $data['redirectUrl']);
         $payment->setTestMode($this->testMode);
 
@@ -108,12 +107,11 @@ class Cashbill
         }
 
         $request->sendRequest($container);
+        $this->response = $request->getResponse();
         if ($request->isError())
             return null;
 
-        $response = $request->getResponse();
-        $this->response = $response;
-        $data = \json_decode((string) $response->getBody(), true);
+        $data = \json_decode((string) $this->response->getBody(), true);
         $transactionInfo = new TransactionInfo($data);
         $transactionInfo->setTestMode($this->testMode);
 
@@ -140,12 +138,11 @@ class Cashbill
         }
 
         $request->sendRequest($container);
+        $this->response = $request->getResponse();
         if ($request->isError())
             return null;
 
-        $response = $request->getResponse();
-        $this->response = $response;
-        $data = \json_decode((string) $response->getBody(), true);
+        $data = \json_decode((string) $this->response->getBody(), true);
         $collection = new ChannelCollection();
         foreach ($data as $channel) {
             $currencies =  $channel['availableCurrencies'];
